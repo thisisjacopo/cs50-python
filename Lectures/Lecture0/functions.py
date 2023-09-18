@@ -20,7 +20,7 @@ hello()
 
 #calculating function
 
-def mainCalc():
+def main_calc():
     x = int(input("what's x: "))
     print("x squared is:", square(x))
     
@@ -28,4 +28,4 @@ def square(x):
     return x * x
 
 main()
-mainCalc()
+main_calc()
