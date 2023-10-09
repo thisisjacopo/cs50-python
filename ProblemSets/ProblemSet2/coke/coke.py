@@ -7,38 +7,26 @@ def buy_coke():
         total = 0
         change = 0
         left = 0
-        coke = 50
         
-        #while the value of the coin is different from 50, ask the user to insert the remaining coins
-        while coin != 50:
-            
-            if coin == 25:
-                total += 25
-            elif coin == 10:
-                total += 10
-            elif coin == 5:
-                total += 5
-            elif coin == 1:
-                total += 1
-                
-            else:
-                print("Error: invalid coin")
-                
-            if total > coke:
-                change = total - coke
-                print(f"Your Owed: {change}")
-                return
-            #if the total value of the coins inserted is less than 50, calculate the left amount
-            elif total < coke:
-                left = coke - total
-                print(f"Amount Due: {left}")
-            coin = int(input("Insert a coin: "))
-            
-        if total == coke:
-            print(f"Changed Owed: {change}")
+        #check value of coin and add to total         
+        if coin == 25:
+            total += 25
+        elif coin == 10:
+            total += 10
+        elif coin == 5:
+            total += 5
+        elif coin == 1:
+            total += 1         
         else:
+            print("Error: invalid coin")
+				                
+			# if total is equal or more than 50 show change and return else calculate amount left and ask for another coin
+        if total >= 50:
+            change = total - 50
+            print(f"Your Owed: {change}")
+        elif total < 50:
+            left = 50 - total
+            print(f"Amount Due: {left}")
             buy_coke()
-
-
 
 main()
