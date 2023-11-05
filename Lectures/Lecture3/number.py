@@ -2,12 +2,19 @@
 # try and except are used to handle errors
 # try block lets you test a block of code for errors
 # except block lets you handle the error
-# finally block lets you execute code, regardless of the result of the try and except blocks
-# raise keyword is used to raise an exception
-# assert keyword is used to assert if something is true
+# pass is used to handle the error without crashing the program
+#raise is used to raise an exception when a certain condition is met 
 
-try:
-    x = int(input("Enter a number: "))
-    print(f"Your number is {x}")
-except ValueError:
-    print("Invalid input, x is not an integer")
+def main():
+    x = get_int("Enter a number: ")
+    print(f"x is {x}")
+
+def get_int(prompt: str):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            # print("Invalid input, x is not an integer")
+            pass
+    
+main()
