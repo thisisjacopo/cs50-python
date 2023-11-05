@@ -7,7 +7,7 @@
 # assert keyword is used to assert if something is true
 
 try:
-    x = input("Enter a number: ")
+    x = int(input("Enter a number: "))
     print(f"Your number is {x}")
 except ValueError:
     print("Invalid input, x is not an integer")
