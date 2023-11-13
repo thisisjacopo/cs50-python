@@ -9,25 +9,18 @@ menu_items = {
     "Taco": 3.00,
     "Tortilla Salad": 8.00
 } 
-
 prompt = "Enter your order: "
 total = 0
-def main(): 
-    try:
-        item = input(prompt)  
-        get_total(item.title())
-    except (EOFError, KeyboardInterrupt):
-        print(f"Total: ${total}")
 
-def get_total(item:str):
+while True: 
     try:
-        total += menu_items[item]
-        main()
-        print(f"Total: ${total}")
+        item = input(prompt)
+        if item.title() in menu_items:
+            total += menu_items[item.title()]
+            print("Total: $", end='')
+            print("{:.2f}".format(total))
+            
     except (EOFError, KeyboardInterrupt):
-        print(f"Total: ${total}")
-    except (ValueError, ZeroDivisionError, TypeError, KeyError, AttributeError, IndexError, NameError):
-        main()
-        
-    
-main()
+        print()
+        break
+            
